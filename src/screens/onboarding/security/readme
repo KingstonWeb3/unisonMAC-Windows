@@ -1,0 +1,6 @@
+**BIOMETRIC**
+You should also update your Info.plist file in your iOS project to add a description for FaceID usage. This is a requirement from Apple to inform the user why the app needs FaceID access. 
+<key>NSFaceIDUsageDescription</key>
+<string>Why we need access to FaceID</string>
+
+Storing Data: The actual biometric data never leaves the device and is securely stored in a secure enclave.
