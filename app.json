@@ -1,0 +1,46 @@
+{
+  "expo": {
+    "name": "Unison",
+    "slug": "vero-finance",
+    "version": "1",
+    "platforms": [
+      "ios"
+    ],
+    "description": "The ultimate Web3 wallet",
+    "orientation": "portrait",
+    "icon": "./public/icon256.png",
+    "userInterfaceStyle": "automatic",
+    "backgroundColor": "#FFFFFF",
+    "splash": {
+      "image": "./public/splash.png",
+      "resizeMode": "contain"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "james.verofinance.com",
+      "buildNumber": "1.0.1"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./public/icon256.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "james.verofinance.com"
+    },
+    "web": {
+      "favicon": "./public/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "61dfc0cf-be81-486c-879f-a159915a8157"
+      }
+    },
+    "owner": "unisonwallet"
+  }
+}

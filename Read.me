@@ -1,0 +1,110 @@
+expo-cli does not support NODE +17, therefor we are using @16.19.0
+npm i axios
+
+- Remove CoinDetailedScreen FROM HOME SCREEN
+- expo start -c (restart expo cache)
+
+
+
+// INSTALLING ALCHEMY SDK
+- npm install alchemy-sdk
+
+
+<ButtonGroup buttons={['Tokens', 'Gallery', 'Activity']} doSomethingAfterClick={printButtonLabel}/>
+
+<Image style={{ width: 350, height: 100, alignItems: 'center' }} source={require('../../assets/png/graph.png')}></Image>
+
+UPLOADING TO EXPODEV
+eas build:configure
+eas build
+eas submit
+
+
+UPLOADING TO TESTFLIGHT (https://www.youtube.com/watch?v=LE4Mgkrf7Sk)
+- npm install -g eas-cli
+- eas login
+- eas build:configure
+- eas build --platform ios
+
+
+
+SVG
+- npm install react-native-svg
+- npm i react-native-svg-transformer
+
+UNISWAP (SWAP) Widget
+- npm i --save @uniswap/v3-sdk
+- npm i --save @uniswap/sdk-core
+
+MAGIC SDK
+- npm install --save @magic-sdk/react-native-expo
+- npm install --save react-native-webview@^8.0.0
+- npm install --save react-native-safe-area-context
+
+DARK MODE
+import themeContext from '../../../theme/themeContext';
+import { EventRegister } from 'react-native-event-listeners'
+
+const theme = useContext(themeContext)
+const [darkMode, setDarkMode] = useState(false)
+
+ Gallery view for Grids <SimpleGrid style={{}} itemDimension={100} data={[1,2,3,4,5,6]} renderItem={({ item }) => (<Text>{item}</Text>)}/>
+
+
+
+
+
+
+ MissCoding
+
+ - Have to update build number each time
+ - eas build -p ios --auto-submit
+
+ - expo publish to upload product build
+
+
+
+
+
+
+ Animations 
+ <Animated.Image source={require('../assets/images/veroiconwhite.png')} 
+                                style={{ borderRadius: 10, width: 250, height: 250, marginBottom: 150, marginTop:150, opacity: fadeInOpacity }} />
+
+const fadeInOpacity = useRef(new Animated.Value(0)).current;
+    useEffect(() => {Animated.timing(fadeInOpacity, {toValue: 1, duration: 4000, // 2 seconds
+                     useNativeDriver: true,}).start();},[]);
+
+
+FONT ////
+expo install expo-font expo-asset
+expo install expo-app-loading
+const [fontsLoaded] = useFonts({'M': require('../assets/fonts/SFproMedium.otf'),'B': require('../assets/fonts/SFproBold.otf'),});
+REDO FONTS PEASE: https://docs.expo.dev/guides/using-custom-fonts/
+/////////////////
+
+CHECKBOX logic:
+
+const [isChecked, setIsChecked] = useState(false);
+    const handleCheckboxPress = () => {setIsChecked(!isChecked);};
+
+<Button onPress={() => {  if (isChecked) {navigation.navigate('Login')}}} color={isChecked ? 'black' : 'grey'} backgroundColor={isChecked ? 'black' : 'grey'} disabled={!isChecked} title='Submit' style={styles.buttonTextInvert}>Continue</Button>
+
+//
+
+
+
+
+TESTFLIGHT
+- npm install -g eas-cli
+- eas build -p ios
+- (ONCE PROJECT BUILT ON EXPO DEV) eas submit --platform ios
+
+FACEID
+Add the necessary permissions:
+In your Info.plist file located in ios/YourAppName, add the following lines:
+
+<key>NSFaceIDUsageDescription</key>
+<string>This app requires Face ID to access secure data.</string>
+
+This string is a message that will be displayed to the user the first time your app attempts to use Face ID.
